@@ -3,96 +3,111 @@ body {
     font-family: "Poppins", sans-serif;
     background: linear-gradient(135deg, #f0f4ff, #d9e4ff);
     color: #333;
-  }
-  
-  a {
+}
+
+a {
     color: #1a73e8;
     text-decoration: none;
     transition: color 0.3s ease;
-  
+
     &:hover {
-      color: #0f5bb5;
+        color: #0f5bb5;
     }
-  }
-  
-  .container {
+}
+
+.container {
     width: 900px;
     margin: auto;
     max-width: 90vw;
     text-align: center;
     padding-top: 20px;
-  }
-  
-  .title {
+}
+
+.title {
     font-size: 2.5em;
     padding: 20px 0;
     color: #2a2a72;
     font-weight: 700;
-  }
-  
-  .listProduct {
+}
+
+.listProduct {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px 0;
-  
+
     .item {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-      &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      }
-  
-      img {
-        width: 100%;
-        border-radius: 15px;
-        transition: opacity 0.3s ease;
-  
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
         &:hover {
-          opacity: 0.9;
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
-      }
-  
-      h2 {
-        font-weight: 600;
-        font-size: 1.5em;
-        margin: 15px 0 10px;
-        color: #2a2a72;
-      }
-  
-      .price {
-        letter-spacing: 5px;
-        font-size: 1em;
-        font-weight: 700;
-        color: #ff7a18;
-        margin-bottom: 10px;
-      }
+
+        img {
+            width: 100%;
+            border-radius: 15px;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 1.5em;
+            margin: 15px 0 10px;
+            color: #2a2a72;
+        }
+
+        .price {
+            letter-spacing: 5px;
+            font-size: 1em;
+            font-weight: 700;
+            color: #ff7a18;
+            margin-bottom: 10px;
+        }
     }
-  }
-  
-  // Responsive design for tablets
-  @media only screen and (max-width: 992px) {
+    .loader {
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 8px solid;
+        border-color: #000 #0000;
+        animation: l1 1s infinite;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+    }
+    @keyframes l1 {
+        to {
+            transform: rotate(0.5turn);
+        }
+    }
+}
+
+// Responsive design for tablets
+@media only screen and (max-width: 992px) {
     .listProduct {
-      grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-  }
-  
-  // Responsive design for mobile devices
-  @media only screen and (max-width: 768px) {
+}
+
+// Responsive design for mobile devices
+@media only screen and (max-width: 768px) {
     .listProduct {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
-  
-  // Responsive design for very small screens
-  @media only screen and (max-width: 480px) {
+}
+
+// Responsive design for very small screens
+@media only screen and (max-width: 480px) {
     .listProduct {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-  }
-  
+}
