@@ -23,6 +23,10 @@ async function addToHtml() {
                 >`);
 			$(".listProduct").append(a);
 		});
-	} catch (error) {}
+	} catch (e) {
+		const div = $(`<div class="loader"></div>`);
+		// $(".listProduct").append(div);
+		$(".listProduct ").append(div);
+	}
 }
 addToHtml();
