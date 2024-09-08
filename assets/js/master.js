@@ -1,4 +1,4 @@
-const testUrl = "https://fakestoreapi.com/products?limit=12";
+const testUrl = "https://dummyjson.com/products/search?q=phone";
 const product = getApi(testUrl);
 async function getApi(url) {
 	try {
@@ -15,12 +15,12 @@ async function getApi(url) {
 async function addToHtml() {
 	try {
 		const data = await product;
-		data.map((item, Index) => {
+		data.products.map((item, Index) => {
 			const a = $(`<a href="#" class="item d-flex flex-column gap-2"
-                    ><img src="${item.image}" alt="" />
-                    <h2 class="mt-4">${item.title}</h2>
-                    <div class="price">${item.price}$</div></a
-                >`);
+		            ><img src="${item.images[0]}" alt="" />
+		            <h2 class="mt-4">${item.title}</h2>
+		            <div class="price">${item.price}$</div></a
+		        >`);
 			$(".listProduct").append(a);
 		});
 	} catch (e) {
